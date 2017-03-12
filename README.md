@@ -7,7 +7,7 @@
 
 * In general there are two kind of logic circuits:
  * Combinatorial circuits in which the outputs depend only on the input values through a boolean function
-   ![combinatorial](images/comb.png)
+   ![combinatorial](images/comb.png)<!-- .element height="50%" width="50%" -->
  * Sequential circuits in wich the outputs depend on the input values and the story of the circuit.
-   ![sequential](images/seq.png)
+   ![sequential](images/seq.png)<!-- .element height="50%" width="50%" -->
 In the images are shown... (to add images that shows sequential circuits vs combinatorial)

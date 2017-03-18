@@ -17,3 +17,24 @@
 
 ![sequential](images/seq.png)
 In the images are shown... (to add images that shows sequential circuits vs combinatorial)
+
+```vhdl
+entity H_A is
+port(
+    A: in bit;
+    B: in bit;
+    S: out bit;
+    C: out bit
+    );
+end H_A;
+
+architecture beh of H_A is
+begin
+    process(A,B)
+    begin
+        S <= A xor B;
+        C <= A and B;
+    end process;
+end beh;
+
+```

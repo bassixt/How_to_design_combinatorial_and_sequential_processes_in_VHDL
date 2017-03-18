@@ -46,3 +46,45 @@ begin
 end beh;
 
 ```
+## VHDL code for sequential logic circuits
+Sequential logic circuits have a dependence between the values of the outputs and the previous values of the inputs. (as well as the current values of the inputs)
+
+This suggest that this kind of circuits have memory elements. There are different kind of sequential logic circuits: synchronous and asynchronous. 
+
+Since the purpose of this examples is to show differences between combinatorial and sequential circuits, we won't go into the details of sequential circuits but we will see only synchronous sequential circuits.
+
+In synchronous circuits, as the name suggest, the changes in the state of memory elements are synchronized by a signal called clock.
+
+Since the clock lead to a state change it must be present in the sensitivity list.
+
+A simple example of a synchronous sequential logic circuits is described below:
+
+```vhdl
+entity T_FF is
+port(
+    T:     in  std_logic;
+    CLK:   in  std_logic;
+    RESET: in  std_logic;
+    Q:     out std_logic 
+    );
+end T_FF;
+
+architecture beh of T_FF is
+signal Q_sig: std_logic;
+begin
+    process(CLK,RESET)
+    begin
+        if (RESET='0') then
+            Q_sig <= '0';
+        elsif CLK'event and (CLK = '1') then
+	    if (T='1') then            
+	        Q_sig <= not Q_sig;
+	    end if;
+        end if;
+    end process;
+    Q <= Q_sig;
+end beh;
+
+```
+![wave](images/wave.png)
+

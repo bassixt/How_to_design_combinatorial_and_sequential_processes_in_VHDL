@@ -2,7 +2,7 @@
 
 ## How to design combinatorial and sequential processes in VHDL
 
-## Differences between combinatorial and sequential logic circuits:
+### Differences between combinatorial and sequential logic circuits:
 
 
 * In general there are two kind of logic circuits:
@@ -17,7 +17,7 @@
 
 ![sequential](images/seq.png)
 
-## VHDL code for combinatorial circuits
+### VHDL code for combinatorial circuits
 Combinatorial circuits can be described in vhdl using normal concurrent signal assignments or using a process. Since there are not memory elements, all assigned signals in a process are always explicitly assigned in all paths of the process statements.
 
 Combinatorial processes have a sensitivity list after the sintax element "process". The sensitivity list specifies the set of signals, events on which may resume a process. 
@@ -46,7 +46,7 @@ begin
 end beh;
 
 ```
-## VHDL code for sequential logic circuits
+### VHDL code for sequential logic circuits
 Sequential logic circuits have a dependence between the values of the outputs and the previous values of the inputs. (as well as the current values of the inputs)
 
 This suggest that this kind of circuits have memory elements. There are different kind of sequential logic circuits: synchronous and asynchronous. 

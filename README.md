@@ -92,4 +92,24 @@ end beh;
 ```
 ![wave](images/wave.png)
 
+We can notice in the previous code that the reset is asynchronous because it's applied whenever the reset value changes to 0. The interest of this is to apply directly the reset and not wait the next clock cycle.  
+If on the other hand we wanted to reset our circuit synchronously with our clock we could produce the following code instead:  
+
+```vhdl
+begin
+    process(CLK,RESET)
+    begin
+        if CLK'event and (CLK = '1') then
+            if (RESET='0') then
+                Q_sig <= '0';
+            endif;
+	        if (T='1') then            
+	            Q_sig <= not Q_sig;
+	        end if;
+        end if;
+    end process;
+    Q <= Q_sig;
+end beh;
+
+```
 

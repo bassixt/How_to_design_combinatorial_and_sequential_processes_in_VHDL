@@ -20,11 +20,15 @@
 ### VHDL code for combinatorial circuits
 Combinatorial circuits can be described in vhdl using normal concurrent signal assignments or using a process. Since there are not memory elements, all assigned signals in a process are always explicitly assigned in all paths of the process statements.
 
-Combinatorial processes have a sensitivity list after the sintax element "process". The sensitivity list specifies the set of signals, events on which may resume a process. 
+Combinatorial processes have a sensitivity list after the sintax element "process". To specify such kind of processes there are two ways in which it is possible to populate this sensitivity list:
+* writing all signals that, having an event, may resume a process;
+* leave the sensitivity list empty and use a wait statement such as wait on "the same value used in the sensitivity list in the previous point";
 
-The process is activated if a value change appears on one of the sensitivity list signals. 
+The process is activated if a value change appears on one of the sensitivity list signals or in the signals stated in the wait statement.
 
-Combinatorial processes' sensitivity list must contain all signals which appear in conditions such as if and any signal appearing on the right hand side of a assignment.
+Describing a combinatorial process means that all signals that appear in the process must be present in the sensitivity list or in the wait statement. If a signal is not included can lead to unwanted behaviours.
+To avoid this problem in VHDL2008 it is possible to use the "all" keyword in the sensitivity list avoiding to specify all signals one by one.
+
 
 ```vhdl
 entity H_A is
@@ -75,11 +79,11 @@ begin
     process(CLK,RESET)
     begin
         if (RESET='0') then
-            Q_sig <= '0';
+                Q_sig <= '0';
         elsif CLK'event and (CLK = '1') then
-	    if (T='1') then            
-	        Q_sig <= not Q_sig;
-	    end if;
+	        if (T='1') then            
+	            Q_sig <= not Q_sig;
+	        end if;
         end if;
     end process;
     Q <= Q_sig;
@@ -87,4 +91,5 @@ end beh;
 
 ```
 ![wave](images/wave.png)
+
 

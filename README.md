@@ -111,3 +111,7 @@ begin
 end beh;
 
 ```
+Synchronous reset have the following advantages:  
+
+1.Sychronous reset have a better synchronization of all the flip-flops with Clock.
+2.Synchronous reset can sometimes be synthetized with smaller flip-flops.  

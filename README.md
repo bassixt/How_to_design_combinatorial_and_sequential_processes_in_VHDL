@@ -89,8 +89,10 @@ end beh;
 ![wave](images/wave.png)
 
 We can notice in the previous code that the reset is asynchronous because it's applied whenever the reset value changes to 0.  
+
 The interest of this is to apply directly the reset and not wait the next clock cycle.  
-If on the other hand we wanted to reset our circuit synchronously with our clock we could produce the following code instead:    
+
+If on the other hand we wanted to reset our circuit synchronously with our clock we could produce the following code instead:  
 
 ```vhdl
 begin

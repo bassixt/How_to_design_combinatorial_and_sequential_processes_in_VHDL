@@ -145,6 +145,8 @@ Flip-flops are clocked circuits whose output may change on an active edge of the
 
 The D flip-flop is a widely used type of flip-flop. It is also known as a data or delay flip-flop. The D flip-flop captures the value of the D-input at a definite portion of the clock cycle (such as the rising edge of the clock). That captured value becomes the Q output. At other times, the output Q does not change. The D flip-flop can be viewed as a memory cell or a delay line. The active edge in a flip-flop could be rising or falling. The following figure shows rising (also called positive) edge triggered D flip-flop and falling (negative edge) triggered D flip-flop.
 
+![Flip Flop](images/flipflop.jpg)
+
 ```vhdl
 
 process(reset,clock)

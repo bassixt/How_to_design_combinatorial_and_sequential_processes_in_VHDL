@@ -114,4 +114,21 @@ end beh;
 Synchronous reset have the following advantages:  
 
 1. Sychronous reset have a better synchronization of all the flip-flops with Clock.
-2. Synchronous reset can sometimes be synthetized with smaller flip-flops.  
+2. Synchronous reset can sometimes be synthetized with smaller flip-flops. 
+
+### Latches
+
+Storage elements can be classified into latches and flip-flops. 
+A latch is a device with exactly two stable states: a high-output and a low-output. A latch has a feedback path, so information can be retained by the device. 
+Therefore latches are volatile memory devices, and can store one bit of data for as long as the device is powered. As the name suggests, latches are used to "latch onto" information and hold the data in place.
+
+An SR latch (Set/Reset) is an asynchronous device: it works independently of control signals and relies only on the state of the S and R inputs. 
+The symbol, the circuit using NOR gates, and the truth table are shown below:
+
+![latches](images/latches.jpg)
+
+### Flip Flops
+
+Flip-flops are clocked circuits whose output may change on an active edge of the clock signal based on its input. Unlike latches, which are transparent and in which output can change when the gated signal is asserted upon the input change, flip-flops normally would not change the output upon input change even when the clock signal is asserted. Flip-flops are widely used in synchronous circuits.
+
+The D flip-flop is a widely used type of flip-flop. It is also known as a data or delay flip-flop. The D flip-flop captures the value of the D-input at a definite portion of the clock cycle (such as the rising edge of the clock). That captured value becomes the Q output. At other times, the output Q does not change. The D flip-flop can be viewed as a memory cell or a delay line. The active edge in a flip-flop could be rising or falling. The following figure shows rising (also called positive) edge triggered D flip-flop and falling (negative edge) triggered D flip-flop.

@@ -125,7 +125,7 @@ Therefore latches are volatile memory devices, and can store one bit of data for
 An SR latch (Set/Reset) is an asynchronous device: it works independently of control signals and relies only on the state of the S and R inputs. 
 The symbol, the circuit using NOR gates, and the truth table are shown below:
 
-![latches](images/latchsr.png)
+![latches](images/latchsr.svg)
 
 ```vhdl
 
@@ -145,7 +145,7 @@ Flip-flops are clocked circuits whose output may change on an active edge of the
 
 The D flip-flop is a widely used type of flip-flop. It is also known as a data or delay flip-flop. The D flip-flop captures the value of the D-input at a definite portion of the clock cycle (such as the rising edge of the clock). That captured value becomes the Q output. At other times, the output Q does not change. The D flip-flop can be viewed as a memory cell or a delay line. The active edge in a flip-flop could be rising or falling. The following figure shows rising (also called positive) edge triggered D flip-flop and falling (negative edge) triggered D flip-flop.
 
-![Flip Flop](images/ffsr2.png)
+![Flip Flop](images/disegn.svg)
 
 ```vhdl
 

@@ -125,10 +125,6 @@ Therefore latches are volatile memory devices, and can store one bit of data for
 An SR latch (Set/Reset) is an asynchronous device: it works independently of control signals and relies only on the state of the S and R inputs. 
 The symbol, the circuit using NOR gates, and the truth table are shown below:
 
-<p align="center">
-  <img src="images/latches.jpg" alt="Sublime's custom image"/>
-</p>
-
 ![latches](images/latches.jpg)
 
 ```vhdl
